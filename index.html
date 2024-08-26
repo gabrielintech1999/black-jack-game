@@ -21,8 +21,8 @@
         text-align: center;
         font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
           "Lucida Sans", Arial, sans-serif;
-          background-color: green;
-          color: #fff;
+        background-color: green;
+        color: #fff;
       }
 
       #title-el {
@@ -46,12 +46,52 @@
   <body>
     <div class="container">
       <h1 id="title-el">blackJack</h1>
-      <p>Want to play a round</p>
-      <div>Cards:</div>
-      <div>Sum:</div>
-      <button>START GAME</button>
-      <button>NEW CARD</button>
+      <p id="status-el">Want to play a round</p>
+      <div>Cards: <span id="cards-el">1</span></div>
+      <div>Sum: <span id="sum-el"></span></div>
+      <button onclick="onGame()">START GAME</button>
+      <button onclick="newCard()">NEW CARD</button>
       <p>Per: $200</p>
     </div>
+
+    <script>
+      const cardsEl = document.getElementById("cards-el");
+      const status = document.getElementById("status-el");
+      const sumEl = document.getElementById("sum-el");
+      let cards = []
+      let card1 = generateCard();
+      let card2 = generateCard();
+
+      function generateCard() {
+        return Math.ceil(Math.random() * 9);
+      }
+
+      function onGame() {
+        cardsEl.textContent = "";
+        sumEl.textContent = "";
+
+        card1 = generateCard();
+        card2 = generateCard();
+        cardsEl.textContent = card1 + " " + card2;
+        sumEl.textContent = card1 + card2;
+      }
+
+      function statusGame() {
+        if (res === 21) {
+          // console.log("You've got black jack congrarulations 😊");
+          status.textContent = "You've got black jack congrarulations 😊";
+        } else if (res > 21) {
+          // console.log("You're out of the game! 😔");
+          status.textContent = "You're out of the game! 😔";
+        } else {
+          // console.log("Do you want to draw a new card?");
+          status.textContent = "Do you want to draw a new card?";
+        }
+      }
+
+      function newCard() {
+        console.log("OK");
+      }
+    </script>
   </body>
 </html>
