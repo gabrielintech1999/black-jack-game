@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>black jack game | game</title>
-</head>
-<body>
-    <p>It's working...</p>
-</body>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+          background-color: green;
+          color: #fff;
+      }
+
+      #title-el {
+        color: goldenrod;
+      }
+
+      button {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: bold;
+        background-color: goldenrod;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title-el">blackJack</h1>
+      <p>Want to play a round</p>
+      <div>Cards:</div>
+      <div>Sum:</div>
+      <button>START GAME</button>
+      <button>NEW CARD</button>
+      <p>Per: $200</p>
+    </div>
+  </body>
 </html>
